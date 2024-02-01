@@ -11,5 +11,3 @@ def convert(puls_dur)
     end
     return morse_lttr
 end
-
-# reg glob(date unix timestamp) var för loop när high och en annan när high > low gämnför --> pulslängd 
