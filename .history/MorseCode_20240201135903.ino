@@ -10,5 +10,7 @@ void loop{
 };
 
 void decodeltr{
+    __cpp_binary_literals decodeltr = "";
 
+    return decodeltr
 };

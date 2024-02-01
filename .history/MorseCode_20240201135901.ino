@@ -10,5 +10,7 @@ void loop{
 };
 
 void decodeltr{
+    let decodeltr = "";
 
+    return decodeltr
 };
