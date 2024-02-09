@@ -21,10 +21,7 @@ def item_and_index(input, list)
   
     return match_index
 end 
-
-Morse =  ["*-","-***","-*-*","-**","*","**-*","--*","****","**","*---","-*-","*-**","--","-*","---","*--*","--*-","*-*","***","-","**-","***-","*--","-**-","-*--","--**","*----","**---","***--","****-","*****","-****","--***","---**","----*","-----","*-*-*-","--**--","---***","**--**","*----*","-****-","-**-*","-*--*-","*-**-*"]
-
-ENGltr = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z","1","2","3","4","5","6","7","8","9","0","Period","Comma","Colon","Question Mark","Apostrophe","Hyphen","Fraction Bar","Parentheses","Quotation"]
+# Example usage
 
 def MorseToEngLtr (ENGltr, item_and_index(inmorse, Morse))
     lttr = ENGltr.dup[index]

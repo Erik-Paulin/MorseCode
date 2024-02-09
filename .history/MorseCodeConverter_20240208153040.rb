@@ -18,7 +18,7 @@ end
 
 def MorseToEngLtr(engl, inmorse,list)
   index = item_and_index(inmorse, list)
-  lttr = engl.dup[index]
+  lttr = engl_.dup[index]
   return lttr
 end
 

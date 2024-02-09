@@ -49,6 +49,7 @@ void loop()
         if (newButtonState == LOW && myChrono.hasPassed(10))
         {
             Serial.print(myChrono.elapsed());
+            Serial.println();
         }
 
         myChrono.restart();

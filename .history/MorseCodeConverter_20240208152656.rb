@@ -16,9 +16,9 @@ def item_and_index(input, list)
 end 
 # Example usage
 
-def MorseToEngLtr(engl, inmorse,list)
+def MorseToEngLtr(ENGltr, code,list)
   index = item_and_index(inmorse, list)
-  lttr = engl.dup[index]
+  lttr = ENGltr.dup[index]
   return lttr
 end
 
@@ -28,5 +28,5 @@ ENGltr = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R
 
 code = gets.chomp
 
-p MorseToEngLtr(ENGltr,code,Morse)
+p MorseToEngLtr(ENGltr,,Morse)
   
