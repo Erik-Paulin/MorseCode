@@ -1,0 +1,2 @@
+start = Time.now
+g
