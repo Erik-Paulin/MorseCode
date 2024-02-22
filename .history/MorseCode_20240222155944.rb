@@ -15,6 +15,7 @@ end
 
 def morse_to_engltr(engl, inmorse,list)
   index = index(inmorse, list)
+  p index
   lttr = engl.dup[index]
   return lttr
 end
@@ -22,12 +23,13 @@ end
 def convert(lttr)
   morse_lttr = ""
   lttr.each do |duration|
-      if duration <= 300
+      if duration < 300
         morse_lttr += "*"
       elsif duration > 300 && duration < 800
         morse_lttr += "-"
       end
   end
+  p lttr
   return morse_lttr
 end
 
@@ -72,6 +74,7 @@ def convert!(morse)
 end
 
 def index!(wrd, engltr)
+  p wrd
   match_index = nil
   engltr.each_with_index do |item, index|
     if wrd == item
@@ -89,11 +92,14 @@ end
 def eng_to_morse(morse,ineng,engltr)
   lttr =[]
   i=0
+  p ineng
   while i<ineng.length
     index = index!(ineng[i], engltr)
+    p index
     lttr << morse.dup[index]
     i+=1
   end
+  p lttr
   return lttr
 end
 
@@ -108,5 +114,5 @@ morse = ["*-","-***","-*-*","-**","*","**-*","--*","****","**","*---","-*-","*-*
 
 engltr = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z","1","2","3","4","5","6","7","8","9","0",".",",",":","?","'","-","/"," "]
 
-p eng_to_morse_time(morse,engltr)
+#p eng_to_morse_time(morse,engltr)
 p morse_to_eng(morse,engltr)

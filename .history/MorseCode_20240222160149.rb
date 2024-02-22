@@ -94,6 +94,7 @@ def eng_to_morse(morse,ineng,engltr)
     lttr << morse.dup[index]
     i+=1
   end
+  p lttr
   return lttr
 end
 
@@ -108,5 +109,5 @@ morse = ["*-","-***","-*-*","-**","*","**-*","--*","****","**","*---","-*-","*-*
 
 engltr = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z","1","2","3","4","5","6","7","8","9","0",".",",",":","?","'","-","/"," "]
 
-p eng_to_morse_time(morse,engltr)
+#p eng_to_morse_time(morse,engltr)
 p morse_to_eng(morse,engltr)
