@@ -87,6 +87,7 @@ def eng_to_morse(morse,ineng,engltr)
 end
 
 def eng_to_morse_time(morse,engltr)
+  p "def eng"
   str = gets.chomp
   str = str.chars
   convert!(eng_to_morse(morse,str,engltr))

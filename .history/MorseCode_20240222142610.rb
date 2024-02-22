@@ -66,29 +66,16 @@ def convert!(morse)
   return times
 end
 
-def index!(input, list)
-  match_index = nil
-  list.each_with_index do |item, index|
-    if input == item
-      match_index = index
-      break  # Stop searching once a match is found
-    end
-  end
-  if match_index.nil?
-    puts "Input does not match any item in the list"
-  end
-  return match_index
-end 
-
-def eng_to_morse(morse,ineng,engltr)
-  index = index!(ineng, engltr)
-  lttr = morse.dup[index]
+def eng_to_morse(engl,inmorse,list)
+  index = index(inmorse, list)
+  lttr = engl.dup[index]
   return lttr
 end
 
 def eng_to_morse_time(morse,engltr)
+  p "def eng"
   str = gets.chomp
-  str = str.chars
+  str = str.char
   convert!(eng_to_morse(morse,str,engltr))
   return time
 end

@@ -55,6 +55,8 @@ void setup() {
 void loop() {
   String str = "";
 
+str[]
+
   while (str.charAt(str.length() - 1) != '.') {
     // Read the state of the button
     int buttonState = digitalRead(BUTTON_PIN);

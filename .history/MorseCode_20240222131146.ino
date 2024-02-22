@@ -10,6 +10,8 @@ Chrono pressTimer;
 int index(String input, String list[], int listSize) {
   int matchIndex = -1;
 
+  
+
   for (int i = 0; i < listSize; i++) {
     if (input.equals(list[i])) {
       matchIndex = i;

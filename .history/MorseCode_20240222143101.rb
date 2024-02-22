@@ -81,14 +81,15 @@ def index!(input, list)
 end 
 
 def eng_to_morse(morse,ineng,engltr)
-  index = index!(ineng, engltr)
+  index = index(ineng, engltr)
   lttr = morse.dup[index]
   return lttr
 end
 
 def eng_to_morse_time(morse,engltr)
+  p "def eng"
   str = gets.chomp
-  str = str.chars
+  str = str.chr
   convert!(eng_to_morse(morse,str,engltr))
   return time
 end

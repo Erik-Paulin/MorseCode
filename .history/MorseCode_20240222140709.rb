@@ -54,6 +54,8 @@ def morse_to_eng(morse,engltr)
   p str
 end
 
+
+
 def convert!(morse)
   time = []
   morse.each do |duration|
@@ -66,35 +68,14 @@ def convert!(morse)
   return times
 end
 
-def index!(input, list)
-  match_index = nil
-  list.each_with_index do |item, index|
-    if input == item
-      match_index = index
-      break  # Stop searching once a match is found
-    end
-  end
-  if match_index.nil?
-    puts "Input does not match any item in the list"
-  end
-  return match_index
-end 
-
-def eng_to_morse(morse,ineng,engltr)
-  index = index!(ineng, engltr)
-  lttr = morse.dup[index]
+def eng_to_morse(engl,inmorse,list)
+  index = index(inmorse, list)
+  lttr = engl.dup[index]
   return lttr
-end
-
-def eng_to_morse_time(morse,engltr)
-  str = gets.chomp
-  str = str.chars
-  convert!(eng_to_morse(morse,str,engltr))
-  return time
 end
 
 morse = ["*-","-***","-*-*","-**","*","**-*","--*","****","**","*---","-*-","*-**","--","-*","---","*--*","--*-","*-*","***","-","**-","***-","*--","-**-","-*--","--**","*----","**---","***--","****-","*****","-****","--***","---**","----*","-----","*-*-*-","--**--","---***","**--**","*----*","-****-","-**-*","******"]
 
 engltr = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z","1","2","3","4","5","6","7","8","9","0",".",",",":","?","'","-","/"," "]
 
-p eng_to_morse_time(morse,engltr)
+p eng_to_morse(morse,engltr)
