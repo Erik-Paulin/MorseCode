@@ -1,18 +1,18 @@
 
 # Code for tranlating morse to English
-  # Main function for timed morse
-def morse_to_eng_1(morse,engltr)
+  # Main function for converting morse code to English
+def morse_to_eng(morse,engltr)
   str=[]
   while str[str.length-1]!="."                            # Stops the convertion if the finished string ends with a period
     h=[]
     g=0                                                   # g mesures length of pulses for convertion
     disp=""
-    while g < 3.00                                       # Differentiates words
-      start1=Time.now                                    # Gets timestamp
-      g=gets                                             # Waits for user
-      stop1=Time.now                                     # Gets timestamp
-      g=(stop1-start1)                                   # Gets pulse-length
-      if g < 3.00                                        # Checks wether or not the length is valid as a puls for letter or if it is puls for separating letters
+    while g < 3.500                                       # Differentiates words
+      start1=Time.now                                     # Gets timestamp
+      g=gets                                              # Waits for user
+      stop1=Time.now                                      # Gets timestamp
+      g=(stop1-start1)                                    # Gets pulse-length
+      if g < 3.500                                        # Checks wether or not the length is valid as a puls for letter or if it is puls for separating letters
       #if myChrono.elapsed < 3.5 s                        # Option if using crono to mesure length
         h << g                                            # Adds puls to collection for convertion
         if g < 1.000                                      # Adds dot to morse display
@@ -23,25 +23,11 @@ def morse_to_eng_1(morse,engltr)
         # h.append(myChrono.elapsed())                    # Option if using crono to mesure length
       else                                                # Letter done, sets for convertion to string
         str << morse_to_engltr(engltr,convert(h),morse)   # Calls function morse_to_engltr with arguments for the list of English letters and the return of the function convert with argument h aswell as list of morse code
-        disp=""
       end
-      puts disp
-      puts str.join
     end
   end
   str=str.join()                                          # Puts the translated morsecode letters into a single string for ease of read
   return str                                              # Returns the finished string 
-end
-
-  # Main function for written morse
-def morse_to_eng_2(morse,engltr)                          
-  str=[]                                                  # Create str array to store letters
-  while str[str.length-1]!="."                            # Stops the convertion if the finished string ends with a period
-    morsein = gets.chomp                                  # Gets user morse input
-    str << morse_to_engltr(engltr, morsein,morse)         # Converts morse letter to English and adds it to str
-    p str.join                                            # Prints str so user can see whats written
-  end
-  return str                                              # Return converted phrase
 end
 
   # Function for converting pulsdurations to either a dot or a dash
@@ -50,7 +36,7 @@ def convert(lttr)
   lttr.each do |duration|                                 # Goes through each item in lttr and converts to either dot or dash
       if duration <= 1.50                                 # When puls duration is shorter than 1.5 it's a dot
         morse_lttr += "*"                                 # Adds dot to return string
-      elsif duration > 1.50 && duration < 3.0            # When puls is between 1.5 and 3.0 it's a dash
+      elsif duration > 1.50 && duration < 3.50            # When puls is between 1.5 and 3.5 it's a dash
         morse_lttr += "-"                                 # Adds dash to return string
       end
   end
@@ -142,25 +128,16 @@ def choice(morse,engltr)
   puts "[1] convert English to morse code"                # Gives option 1
   puts "[2] convert morse code to English"                # Gives option 2
   i = gets.chomp.to_i                                     # Get input from user regarding function
-  if i == 1                                               # Checks if answer is 1
+  if i == 1                                               # Checks answer if 1
     puts "Write a phrase in all caps"                     # Gives short instruction on what must be done for the function to work
-    p eng_to_morse_time(morse,engltr)                     # Calls the corresponding main function
-  elsif i == 2                                            # Checks if answer is 2
-    puts "[1] True morse experience"                      # Gives option 1
-    puts "[2] written dots and dashes"                    # Gives option 2
-    d= gets.chomp.to_i                                    # Gets user input
-    if d == 1                                             # Checks if answer is 1
-      puts "Enter signal durations, use a signal longer than 4 second (4000 milis) to differentiate between letters, finish with '.' " # Gives short instruction on what must be done for the function to work
-      puts "Note that pulses counted by time between presses"
-      puts "Note that a dot is > 1.5 second long and a dash is between 1.5 and 3.0 seconds long"
-      puts "Press enter to start"
-      d=gets.chomp                                        # Creates a stop so that user can prepare
-      puts morse_to_eng_1(morse,engltr)                   # Calls the corresponding main function
-    elsif d==2                                            # Checks if answer is 2
-      puts "dot = * dash = -, finish with '*-*-*-'"       # Gives short instruction on what must be done for the function to work
-      morse_to_eng_2(morse,engltr)                        # Calls the corresponding main function
-    end
-    
+    eng_to_morse_time(morse,engltr)                       # Calls the corresponding main function
+  elsif i == 2                                            # Checks answer if 2
+    puts "Enter signal durations, use a signal longer than 4 second (4000 milis) to differentiate between letters, finish with '.' " # Gives short instruction on what must be done for the function to work
+    puts "Pulses notet in negative"
+    puts "Note that a dot is > 1.5 second long and a dash is between 1.5 and 3.5 seconds long"
+    puts "Press enter to start"
+    d=gets.chomp                                          # Creates a stop so that user can prepare
+    puts morse_to_eng(morse,engltr)                       # Calls the corresponding main function
   else                                                    # Else-case if user gives input other than 1 or 2
     puts "This option is not avalable"                    # Corresponding message of inavalability
   end

@@ -38,10 +38,10 @@ def morse_to_eng_2(morse,engltr)
   str=[]                                                  # Create str array to store letters
   while str[str.length-1]!="."                            # Stops the convertion if the finished string ends with a period
     morsein = gets.chomp                                  # Gets user morse input
-    str << morse_to_engltr(engltr, morsein,morse)         # Converts morse letter to English and adds it to str
-    p str.join                                            # Prints str so user can see whats written
+    str << morse_to_engltr(engltr, morsein,morse)         # Converts morse letter to English and 
+    p str.join
   end
-  return str                                              # Return converted phrase
+  return str
 end
 
   # Function for converting pulsdurations to either a dot or a dash

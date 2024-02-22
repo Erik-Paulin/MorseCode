@@ -41,7 +41,7 @@ def morse_to_eng_2(morse,engltr)
     str << morse_to_engltr(engltr, morsein,morse)         # Converts morse letter to English and adds it to str
     p str.join                                            # Prints str so user can see whats written
   end
-  return str                                              # Return converted phrase
+  return str                                              # R
 end
 
   # Function for converting pulsdurations to either a dot or a dash

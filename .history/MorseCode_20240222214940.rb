@@ -1,6 +1,6 @@
 
 # Code for tranlating morse to English
-  # Main function for timed morse
+  # Main function for converting morse code to English
 def morse_to_eng_1(morse,engltr)
   str=[]
   while str[str.length-1]!="."                            # Stops the convertion if the finished string ends with a period
@@ -8,10 +8,10 @@ def morse_to_eng_1(morse,engltr)
     g=0                                                   # g mesures length of pulses for convertion
     disp=""
     while g < 3.00                                       # Differentiates words
-      start1=Time.now                                    # Gets timestamp
-      g=gets                                             # Waits for user
-      stop1=Time.now                                     # Gets timestamp
-      g=(stop1-start1)                                   # Gets pulse-length
+      start1=Time.now                                     # Gets timestamp
+      g=gets                                              # Waits for user
+      stop1=Time.now                                      # Gets timestamp
+      g=(stop1-start1)                                    # Gets pulse-length
       if g < 3.00                                        # Checks wether or not the length is valid as a puls for letter or if it is puls for separating letters
       #if myChrono.elapsed < 3.5 s                        # Option if using crono to mesure length
         h << g                                            # Adds puls to collection for convertion
@@ -33,15 +33,15 @@ def morse_to_eng_1(morse,engltr)
   return str                                              # Returns the finished string 
 end
 
-  # Main function for written morse
-def morse_to_eng_2(morse,engltr)                          
-  str=[]                                                  # Create str array to store letters
-  while str[str.length-1]!="."                            # Stops the convertion if the finished string ends with a period
-    morsein = gets.chomp                                  # Gets user morse input
-    str << morse_to_engltr(engltr, morsein,morse)         # Converts morse letter to English and adds it to str
-    p str.join                                            # Prints str so user can see whats written
+  
+def morse_to_eng_2(morse,engltr)
+  str=[]
+  while str[str.length-1]!="."
+    morsein = gets.chomp
+    str << morse_to_engltr(engltr, morsein,morse)
+    p str.join
   end
-  return str                                              # Return converted phrase
+  return str
 end
 
   # Function for converting pulsdurations to either a dot or a dash
