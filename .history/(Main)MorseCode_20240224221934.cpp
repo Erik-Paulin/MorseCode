@@ -1,8 +1,3 @@
-
-
-
-
-
 #include <Arduino.h> // Including Arduino library for access to its functions and definitions
 
 // Function prototypes
@@ -157,15 +152,18 @@ void choose_conversion()
   Serial.println();                 // Print new line
 
   if (choice == 1)
-  {                      // Check if user chose option 1
-    eng_to_morse_time(); // Call function to convert English to Morse code
+  { // Check if
+
+    if (choice == 1)
+    {                      // Check if user chose option 1
+      eng_to_morse_time(); // Call function to convert English to Morse code
+    }
+    else if (choice == 2)
+    {                   // Check if user chose option 2
+      morse_to_eng_2(); // Call function to convert Morse code to English
+    }
+    else
+    {                                    // If user entered an invalid choice
+      Serial.println("Invalid choice!"); // Print error message
+    }
   }
-  else if (choice == 2)
-  {                   // Check if user chose option 2
-    morse_to_eng_2(); // Call function to convert Morse code to English
-  }
-  else
-  {                                    // If user entered an invalid choice
-    Serial.println("Invalid choice!"); // Print error message
-  }
-}

@@ -1,8 +1,3 @@
-
-
-
-
-
 #include <Arduino.h> // Including Arduino library for access to its functions and definitions
 
 // Function prototypes
